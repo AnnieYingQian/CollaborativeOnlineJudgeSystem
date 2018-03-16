@@ -28,7 +28,7 @@ router.get('/problems/:id', (req, res) => {
 
 // post porblem
 router.post('/problems', jsonParser, (req, res) => {
-    problemService.addProblem(req.body) 
+    problemService.addProblem(req.body)
         .then(
             //resolve
             (problems) => {
@@ -40,7 +40,7 @@ router.post('/problems', jsonParser, (req, res) => {
                 res.status(400).send("Problem name already exists");
             }
         )
-}); 
+});
 
 // build and run
 // jsonParser: middleware, used to parse the body of the POST request
@@ -60,8 +60,8 @@ router.post('/build_and_run', jsonParser, (req, res) => {
             const text = `Build output: ${data['build']}, execute output: ${data['run']}`;
             console.log(text);
             res.json(text);
-        } 
+        }
     )
 })
-
+// export Router
 module.exports = router;

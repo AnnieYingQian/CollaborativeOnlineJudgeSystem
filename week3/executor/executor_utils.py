@@ -5,7 +5,7 @@ import uuid
 
 from docker.errors import APIError
 from docker.errors import ContainerError
-from docker.errors import ImageNotFound 
+from docker.errors import ImageNotFound
 
 # get current directory
 CURRENT_DIR = os.path.dirname(os.path.relpath(__file__))
@@ -60,14 +60,14 @@ def make_dir(dir):
         print("cannot create dir")
 
 def build_and_run(code, lang):
-    # the result we want 
+    # the result we want
     result = {'build': None, 'run': None, 'error': None}
-    # use teh uuid to create unique file name
+    # use the uuid to create unique file name
     source_file_parent_dir_name = uuid.uuid4()
     # shared folder that can be used in docker
     source_file_host_dir = "%s/%s" % (TEMP_BUILD_DIR, source_file_parent_dir_name)
     source_file_guest_dir = "/test/%s" % (source_file_parent_dir_name)
-    make_dir(source_file_host_dir) 
+    make_dir(source_file_host_dir)
 
     # write the code into source file
     with open("%s/%s" % (source_file_host_dir, SOURCE_FILE_NAMES[lang]), 'w') as source_file:
@@ -79,7 +79,7 @@ def build_and_run(code, lang):
             # run this command to build the code
             command = "%s %s" % (BUILD_COMMANDS[lang], SOURCE_FILE_NAMES[lang]),
             # bind the host dir and guest dir, 'rw': read and write
-            # means we have read and write permission of guest 
+            # means we have read and write permission of guest
             # docker can access the host dir
             volumes={source_file_host_dir: {'bind': source_file_guest_dir, 'mode': 'rw'}},
             working_dir = source_file_guest_dir
@@ -120,4 +120,3 @@ def build_and_run(code, lang):
     # after build and run clean up dir
     shutil.rmtree(source_file_host_dir)
     return result
-
