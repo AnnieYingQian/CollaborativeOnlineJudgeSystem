@@ -33,7 +33,7 @@ This is a full-stack project with an Angular based front end, NodeJS based restf
 
 - Application: service / algorithm (Angular 5)
 
-  ![](/home/yingqian/CollaborativeOnlineJudgeSystem/COJ.jpg)
+  ![./COJ.jpg](/home/yingqian/CollaborativeOnlineJudgeSystem/COJ.jpg)
 
 - Kilobit: data (output)
   - Editing
