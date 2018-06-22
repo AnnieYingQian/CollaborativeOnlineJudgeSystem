@@ -58,5 +58,3 @@ This is a full-stack project with an Angular based front end, NodeJS based restf
     *Load Balancer --- Nginx*
   - Fail and stop? 
     *Several servers, Timestamp*
-
-
