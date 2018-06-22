@@ -33,7 +33,7 @@ This is a full-stack project with an Angular based front end, NodeJS based restf
 
 - Application: service / algorithm (Angular 5)
 
-  ![https://github.com/AnnieYingQian/CollaborativeOnlineJudgeSystem/blob/master/COJ.jpg]()
+  ![https://github.com/AnnieYingQian/CollaborativeOnlineJudgeSystem/master/COJ.jpg]()
 
 - Kilobit: data (output)
   - Editing
